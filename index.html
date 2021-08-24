@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x9.css">
+    <link rel="stylesheet" href="highlight/styles/github.css">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="slides.css">
   </head>
@@ -32,21 +33,48 @@
       </div><img src="pictures/about-cover.jpg" class="cover"/>
     </section>
     <section id="" class="slide">
-      <h2 class=" shout shrink">Что же такое эти ваши браузерные API?</h2><img src="pictures/philosoraptor.jpg" class="cover"/>
+      <h2 style="color:#fff; font-size: 50px; padding-left: 50%; padding-top: 10%">Что же такое эти ваши &#171;браузерные API&#187?</h2><img src="pictures/philosoraptor.jpg" class="cover"/>
     </section>
     <section id="" class="slide">
-      <h2>Спецификации</h2><a href="https://developer.mozilla.org/en-US/docs/Web/API#specifications" class="copyright">Web APIs | MDN</a><img src="pictures/apis.jpg" class="cover"/><img src="pictures/confused.gif" style="position: absolute; left: 30%; bottom: -10%; width: 500px" class="next">
+      <h2>В браузере есть только...</h2><img src="pictures/browser.jpg" class="cover"/>
     </section>
     <section id="" class="slide">
-      <h2>О чем эти спецификации</h2>
-      <ul>
-        <li>Манипуляции DOM и стилями</li>
-        <li class="next">Передача данных и состояние сети</li>
-        <li class="next">Графика и медиа</li>
-        <li class="next">Управление устройствами</li>
-        <li class="next">Хранение и управление данными пользователя</li>
-        <li class="next">Cостояние браузера и отладка</li>
-      </ul>
+      <h2>Браузерные API</h2><a href="https://developer.mozilla.org/en-US/docs/Web/API#specifications" class="copyright">Web APIs | MDN</a><img src="pictures/apis.jpg" class="cover"/><img src="pictures/confused.gif" style="position: absolute; left: 30%; bottom: -10%; width: 500px" class="next">
+    </section>
+    <section id="" class="slide">
+      <h2 style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;" class="shout">Манипуляции DOM и стилями</h2><img src="pictures/blur_cover.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide">
+      <h2 style="font-size: 100px" class="shout">Как узнать, что пользователь &#171;зумил&#187 страницу?</h2><img src="pictures/what-if.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide">
+      <h2>Определяем пользовательский зум</h2>
+      <div style="display:flex">
+        <iframe height="400" width="400" style="" scrolling="no" title="Simple browser zoom detect with jquery #codevember" src="https://codepen.io/reinis/embed/RooGOE?default-tab=result&amp;theme-id=light" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/reinis/pen/RooGOE">Simple browser zoom detect with jquery #codevember</a> by Reinis (<a href="https://codepen.io/reinis">@reinis</a>)
+            on <a href="https://codepen.io">CodePen</a>.
+        </iframe>
+        <video src="pictures/zoom_bad.mp4" controls width="20%" style="margin-left: 30px"></video>
+      </div><img src="pictures/xz.jpg" style="position:absolute; right: 0; bottom: 0; width: 300px" class="next"><a href="https://codepen.io/reinis/pen/RooGOE" class="copyright">Simple browser zoom detect with jquery #codevember</a>
+    </section>
+    <section id="" class="slide">
+      <iframe height="700" style="width: 150%; transform: scale(0.65); transform-origin: 0 0" scrolling="no" src="https://bokand.github.io/viewport/index.html"> </iframe><a href="https://bokand.github.io/viewport/index.html" class="copyright">Visual vs. Layout Viewport Demo</a>
+    </section>
+    <section id="" class="slide">
+      <h2>VisualViewport API</h2>
+      <pre><code class="js">visualViewport = {
+  offsetLeft
+  offsetTop
+  pageLeft
+  pageTop
+  width  
+  height
+  scale
+}</code></pre>
+    </section>
+    <section id="" class="slide">
+      <iframe height="700" style="width: 150%; transform: scale(0.65); transform-origin: 0 0" scrolling="no" src="https://wicg.github.io/visual-viewport/examples/hide-on-zoom.html"> </iframe><a href="https://wicg.github.io/visual-viewport/examples/hide-on-zoom.html" class="copyright">Example with hide on zoom</a>
+    </section>
+    <section id="" class="slide"><img src="pictures/viewport_use.jpg" class="cover"/><a href="https://caniuse.com/mdn-api_visualviewport" class="copyright">Caniuse — VisualViewport API</a>
     </section>
     <section id="" class="slide">
       <h2>Манипуляции DOM и стилями</h2>
@@ -57,8 +85,32 @@
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API">CSS Font Loading API</a></li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API">HTML Drag and Drop API</a></li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">Intersection Observer API</a> и <a href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API">Visual Viewport API</a></li>
-        <li>CSS Houdini: <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API ">CSS Typed OM</a> и <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API">CSS Painting API</a></li>
+        <li>CSS Houdini: <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API ">CSS Typed OM</a> и <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API">CSS Painting API</a>и CSS Layout API</li>
       </ul>
+    </section>
+    <section id="" class="slide">
+      <h2 style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;" class="shout">Передача данных и состояние сети</h2><img src="pictures/blur_cover.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide">
+      <h2 style="font-size: 100px" class="shout">Как общаться между вкладками, не&nbsp;используя сеть?</h2><img src="pictures/what-if.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide">
+      <div style="display:flex; margin-left: 30px">
+        <iframe height="450" style="width: 400px" scrolling="no" src="https://web-api-examples.github.io/broadcastchannel.html"> </iframe>
+        <iframe height="450" style="width: 400px; margin-left: 30px" scrolling="no" src="https://web-api-examples.github.io/broadcastchannel.html"></iframe>
+      </div><a href="https://web-api-examples.github.io/broadcastchannel.html" class="copyright">Demo - BroadcastChannel</a>
+    </section>
+    <section id="" class="slide">
+      <h2>Broadcast Channel API</h2><img src="pictures/broadcastchannel.png" style="width: 80%; margin-left: 100px">
+    </section>
+    <section id="" class="slide">
+      <h2>Broadcast Channel API</h2>
+      <pre><code class="js">const bc = new BroadcastChannel('test_channel')</code></pre>
+      <pre class="next"><code class="js">bc.postMessage('This is a test message.')</code></pre>
+      <pre class="next"><code class="js">bc.onmessage = function (ev) { ... }</code></pre>
+      <pre class="next"><code class="js">bc.close();</code></pre>
+    </section>
+    <section id="" class="slide"><img src="pictures/broadcast_use.jpg" class="cover"/><a href="https://caniuse.com/broadcastchannel" class="copyright">Caniuse — BroadcastChannel</a>
     </section>
     <section id="" class="slide">
       <h2>Передача данных и состояние сети</h2>
@@ -76,6 +128,41 @@
       </ul>
     </section>
     <section id="" class="slide">
+      <h2 style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;" class="shout">Графика и медиа</h2><img src="pictures/blur_cover.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide">
+      <h2 style="font-size: 100px; margin-top: -50px" class="shout">Можно ли распознать QR&#8209;код&nbsp;из&nbsp;браузера?</h2><img src="pictures/what-if.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide">
+      <h2 class="shout"><a href="https://qrsnapper.appspot.com/">Считываем код телефоном</a></h2><a href="https://dzone.com/articles/barcode-detection-using-the-shape-detection-api" class="copyright">Barcode Detection Using the Shape Detection API</a>
+    </section>
+    <section id="" class="slide"><img src="pictures/barcodes.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide">
+      <h2>Barcode Detection API</h2>
+      <pre><code>const barcodeDetector = new BarcodeDetector();</code></pre>
+      <pre class="next"> <code>barcodeDetector.detect(image)
+  .then(barcodes => { ... })
+  .catch(e => { ... });</code></pre>
+    </section>
+    <section id="" class="slide"><img src="pictures/barcode_use.jpg" class="cover"/><a href="https://caniuse.com/mdn-api_barcodedetector" class="copyright">Caniuse — BarcodeDetector API</a>
+    </section>
+    <section id="" class="slide">
+      <h2 style="font-size: 100px; margin-top: -50px" class="shout">Хочу смотреть видео и&nbsp;одновременно смотреть другие вкладки</h2><img src="pictures/what-if.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide">
+      <iframe height="450" style="width: 520px; margin-left: 160px" scrolling="no" title="Picture-in-Picture demo" src="https://codepen.io/ayoisaiah/embed/dyyeQVG?default-tab=result&amp;theme-id=light" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/ayoisaiah/pen/dyyeQVG">Picture-in-Picture demo</a> by Ayooluwa (<a href="https://codepen.io/ayoisaiah">@ayoisaiah</a>)
+          on <a href="https://codepen.io">CodePen</a>.
+      </iframe>
+    </section>
+    <section id="" class="slide">
+      <h2>Picture-in-Picture API</h2>
+      <pre><code>video(src="") </code><code class="mark">  .requestPictureInPicture()</code><code>  .catch(error => {</code><code class="comment">    // Error handling</code><code>  });</code></pre>
+      <pre><code>.exitPictureInPicture()</code></pre>
+    </section>
+    <section id="" class="slide"><img src="pictures/picture-in_use.jpg" class="cover"/><a href="https://caniuse.com/picture-in-picture" class="copyright">Caniuse — Picture-in-Picture API</a>
+    </section>
+    <section id="" class="slide">
       <h2>Графика и медиа</h2>
       <ul>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API">Web Animations API</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Canvas API</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API">WebGL</a> и <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API" style="text-decoration:line-through ">WebVR API</a> <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API">WebXR Device API</a></li>
@@ -84,6 +171,30 @@
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API">WebRTC API</a>: <span style="font-size: 0.85em"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API">Media Stream</a> и  <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API">MediaStream Recording API</a></span></li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Capabilities_API">Media Capabilities API</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API">Media Source API</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API">Media Session API</a> и <a href="https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API">Encrypted Media Extensions API</a></li>
       </ul>
+    </section>
+    <section id="" class="slide">
+      <h2 style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;" class="shout">Управление устройствами</h2><img src="pictures/blur_cover.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide"><img src="pictures/makeev_iot.png" class="cover"/><a href="https://youtu.be/9mv-8gSyalU" class="copyright">Я и ИоТ, Вадим Макеев (Youtube)</a>
+    </section>
+    <section id="" class="slide"><img src="pictures/midi.png" class="cover"/><a href="https://youtu.be/-Ml7J3ocqUo" class="copyright">George Mandis — Make More Than Music with Tiny Computers, JavaScript and MIDI (Youtube)</a>
+    </section>
+    <section id="" class="slide">
+      <h2 style="font-size: 100px; margin-top: -50px" class="shout">Как заставить телефон делать &#171;вж-вж-вж-вж&#187;?</h2><img src="pictures/what-if.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide  shout">
+      <h2 class="shout"><a href="https://neesoglasnaja.github.io/DiceRoller/dist/pwa/index.html">Бросим кубики</a></h2>
+    </section>
+    <section id="" class="slide">
+      <h2>Vibration API</h2>
+      <pre><code>if ("vibrate" in navigator) {
+  ...
+  navigator.vibrate(200) // одиночная вибрация
+  navigator.vibrate([100,30,100,30,...]) // последовательность
+  ...
+}</code></pre>
+    </section>
+    <section id="" class="slide"><img src="pictures/vibration_use.jpg" class="cover"/><a href="https://caniuse.com/vibration" class="copyright">Caniuse — Vibration API</a>
     </section>
     <section id="" class="slide">
       <h2>Управление устройствами</h2>
@@ -97,6 +208,38 @@
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API">Vibration API</a></li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API">Gamepad API</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API">Web MIDI API</a> и <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebHID_API">WebHID API</a></li>
       </ul>
+    </section>
+    <section id="" class="slide">
+      <h2 style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;" class="shout">Хранение и&nbsp;управление данными</h2><img src="pictures/blur_cover.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide">
+      <h2 style="font-size: 100px; margin-top: -50px" class="shout">Как оградить сайт от &#171;опасного кода&#187 в&nbsp;комментариях?</h2><img src="pictures/what-if.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide">
+      <h2 class="shout"><a href="https://sanitizer-api.dev/">Запретим опасный код</a></h2>
+    </section>
+    <section id="" class="slide"><img src="pictures/sanitizer_use.jpg" class="cover"/><a href="https://caniuse.com/mdn-api_sanitizer" class="copyright">Caniuse — Sanitizer API</a>
+    </section>
+    <section id="" class="slide"><img src="pictures/sanitize_npm.jpg" class="cover"/><a href="https://www.npmjs.com/package/sanitize-html" class="copyright">sanitize-html    </a>
+    </section>
+    <section id="" class="slide">
+      <h2 style="font-size: 100px; margin-top: -50px" class="shout">Хочу доступ к контактам, как в мобильных приложениях</h2><img src="pictures/what-if.jpg" class="cover"/>
+    </section>
+    <section id="" class="slide">
+      <video src="pictures/contact.mp4" width="230" style="margin-left: 350px" loop autoplay></video><a href="https://contact-picker.glitch.me/" class="copyright">Contact Picker API Demo </a>
+    </section>
+    <section id="" class="slide">
+      <h2>Contact Picker API</h2><span style="font-size: 0.9em">
+        <pre><code>const supported = ('contacts' in navigator
+   && 'ContactsManager' in window);</code></pre>
+        <pre class="next"><code>const props = ['name', 'email', 'tel', 'address', 'icon'];
+const opts = { multiple: true };
+ 
+navigator.contacts.select(props, opts)
+  .then(contacts => { ... })
+  .catch(e => { ... })</code></pre></span>
+    </section>
+    <section id="" class="slide"><img src="pictures/contacts_use.jpg" class="cover"/><a href="https://developer.mozilla.org/en-US/docs/Web/API/ContactsManager/getProperties" class="copyright">ContactsManager - Web APIs | MDN</a>
     </section>
     <section id="" class="slide">
       <h2>Хранение и управление данными</h2>
@@ -129,24 +272,14 @@
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Presentation_API">Presentation API</a></li>
       </ul>
     </section>
-    <section id="" class="slide">
-      <ul>
-        <li> </li>
-        <li></li>
-        <li></li>
-      </ul>
-    </section>
-    <section id="" class="slide">
-      <h2>О чем я не сказала?</h2>
-      <ul>
-        <li>Гуддини</li>
-        <li>WebAssembly</li>
-      </ul>
+    <section id="" class="slide"><img src="pictures/webassembly.jpg" class="cover"/>
     </section>
     <section id="theend" class="slide">
       <p style="position: absolute; bottom: 5%" class="end-link"><a href="http://bit.ly/WeAreDevs-frameworks" target="_blank" class="bigger">bit.ly/WeAreDevs-frameworks</a><br>Саша Шинкевич (<a href="https://twitter.com/neesoglasnaja" target="_blank">@neesoglasnaja</a>)</p><img src="pictures/the_end.gif" style="min-height: 240%; max-width: none" class="cover">
     </section>
     <div class="progress"></div>
     <script src="shower/shower.min.js"></script>
+    <script src="highlight/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
   </body>
 </html>

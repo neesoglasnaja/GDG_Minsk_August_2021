@@ -13,6 +13,7 @@ html(lang='ru')
     meta(http-equiv='x-ua-compatible', content='ie=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='shower/themes/ribbon/styles/screen-16x9.css')
+    link(rel='stylesheet', href='highlight/styles/github.css')
     link(rel='stylesheet', href='theme.css')
     link(rel='stylesheet', href='slides.css')
   body.shower.list
@@ -39,20 +40,64 @@ html(lang='ru')
           img.logo(src="pictures/css-minsk-js.svg", style="background-color: #2b2727; height: 75px")
           img.logo(src="pictures/fc.png")
       +cover('pictures/about-cover.jpg')
-    +slide({header: "Что же такое эти ваши браузерные API?", classes: "", shout:'true'})
+    +slide({header: "", classes: "", shout:'true'})
+      h2(style="color:#fff; font-size: 50px; padding-left: 50%; padding-top: 10%") Что же такое эти ваши &#171;браузерные API&#187?
       +cover('pictures/philosoraptor.jpg')
-    +slide({header: "Спецификации", classes: ""})
+    +slide({header: "В браузере есть только...", classes: ""})
+      +cover('pictures/browser.jpg')
+    +slide({header: "Браузерные API", classes: ""})
       a.copyright(href="https://developer.mozilla.org/en-US/docs/Web/API#specifications") Web APIs | MDN
       +cover('pictures/apis.jpg')
       img.next(src="pictures/confused.gif", style="position: absolute; left: 30%; bottom: -10%; width: 500px")
-    +slide({header: "О чем эти спецификации", classes: ""})
-      ul
-        li Манипуляции DOM и стилями
-        li.next Передача данных и состояние сети
-        li.next Графика и медиа
-        li.next Управление устройствами
-        li.next Хранение и управление данными пользователя
-        li.next Cостояние браузера и отладка
+    //- +slide({header: "О чем эти спецификации", classes: ""})
+    //-   ul
+    //-     li Манипуляции DOM и стилями
+    //-     li.next Передача данных и состояние сети
+    //-     li.next Графика и медиа
+    //-     li.next Управление устройствами
+    //-     li.next Хранение и управление данными пользователя
+    +slide({header: "", classes: ""})
+      h2.shout(style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;") Манипуляции DOM и стилями
+      +cover('pictures/blur_cover.jpg')
+    +slide({header: "", classes: ""})
+      h2.shout(style="font-size: 100px") Как узнать, что пользователь &#171;зумил&#187 страницу?
+      +cover('pictures/what-if.jpg')
+    +slide({header: "Определяем пользовательский зум", classes: ""})
+      div(style="display:flex")
+        iframe(height='400' width="400" style='' scrolling='no' title='Simple browser zoom detect with jquery #codevember' src='https://codepen.io/reinis/embed/RooGOE?default-tab=result&theme-id=light' frameborder='no' loading='lazy' allowtransparency='true' allowfullscreen='true')
+          | See the Pen 
+          a(href='https://codepen.io/reinis/pen/RooGOE')
+            | Simple browser zoom detect with jquery #codevember
+          |  by Reinis (
+          a(href='https://codepen.io/reinis') @reinis
+          | )
+          |   on 
+          a(href='https://codepen.io') CodePen
+          | .
+        video(src="pictures/zoom_bad.mp4" controls width="20%" style="margin-left: 30px")
+      img.next(src="pictures/xz.jpg" style="position:absolute; right: 0; bottom: 0; width: 300px")
+      a.copyright(href="https://codepen.io/reinis/pen/RooGOE") Simple browser zoom detect with jquery #codevember
+    +slide({header: "", classes: ""})
+      iframe(height='700' style='width: 150%; transform: scale(0.65); transform-origin: 0 0' scrolling='no' src="https://bokand.github.io/viewport/index.html") 
+      a.copyright(href="https://bokand.github.io/viewport/index.html") Visual vs. Layout Viewport Demo
+    +slide({header: "VisualViewport API", classes: ""})
+      pre
+        code.js
+          | visualViewport = {
+          |   offsetLeft
+          |   offsetTop
+          |   pageLeft
+          |   pageTop
+          |   width  
+          |   height
+          |   scale
+          | }
+    +slide({header: "", classes: ""})
+      iframe(height='700' style='width: 150%; transform: scale(0.65); transform-origin: 0 0' scrolling='no' src="https://wicg.github.io/visual-viewport/examples/hide-on-zoom.html") 
+      a.copyright(href="https://wicg.github.io/visual-viewport/examples/hide-on-zoom.html") Example with hide on zoom
+    +slide({header: "", classes: ""})
+      +cover('pictures/viewport_use.jpg')
+      a.copyright(href="https://caniuse.com/mdn-api_visualviewport") Caniuse — VisualViewport API
     +slide({header: "Манипуляции DOM и стилями", classes: ""})
       ul
         li
@@ -80,6 +125,36 @@ html(lang='ru')
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API ") CSS Typed OM
           |  и 
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API") CSS Painting API
+          | и CSS Layout API
+    +slide({header: "", classes: "", shout: true})
+      h2.shout(style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;") Передача данных и состояние сети
+      +cover('pictures/blur_cover.jpg')
+    +slide({header: "", classes: ""})
+      h2.shout(style="font-size: 100px") Как общаться между вкладками, не&nbsp;используя сеть?
+      +cover('pictures/what-if.jpg')
+    +slide({header: "", classes: ""})
+      div(style="display:flex; margin-left: 30px")
+        iframe(height='450' style='width: 400px' scrolling='no' src="https://web-api-examples.github.io/broadcastchannel.html") 
+        iframe(height='450' style='width: 400px; margin-left: 30px' scrolling='no' src="https://web-api-examples.github.io/broadcastchannel.html")
+      a.copyright(href="https://web-api-examples.github.io/broadcastchannel.html") Demo - BroadcastChannel
+    +slide({header: "Broadcast Channel API", classes: ""})
+      img(src="pictures/broadcastchannel.png", style="width: 80%; margin-left: 100px")
+    +slide({header: "Broadcast Channel API", classes: ""})
+      pre
+        code.js
+          | const bc = new BroadcastChannel('test_channel')
+      pre.next
+        code.js
+          | bc.postMessage('This is a test message.')
+      pre.next
+        code.js
+          | bc.onmessage = function (ev) { ... }
+      pre.next
+        code.js
+          | bc.close();
+    +slide({header: "", classes: ""})
+      +cover('pictures/broadcast_use.jpg')
+      a.copyright(href="https://caniuse.com/broadcastchannel") Caniuse — BroadcastChannel
     +slide({header: "Передача данных и состояние сети", classes: ""})
       ul
         li 
@@ -112,6 +187,56 @@ html(lang='ru')
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Streams_API") Streams API
         li 
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API") Network Information API
+    +slide({header: "", classes: "", shout: true})
+      h2.shout(style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;") Графика и медиа
+      +cover('pictures/blur_cover.jpg')
+    +slide({header: "", classes: ""})
+      h2.shout(style="font-size: 100px; margin-top: -50px") Можно ли распознать QR&#8209;код&nbsp;из&nbsp;браузера?
+      +cover('pictures/what-if.jpg')
+    +slide({header: "", classes: ""})
+      h2.shout
+        a(href="https://qrsnapper.appspot.com/") Считываем код телефоном
+      a.copyright(href="https://dzone.com/articles/barcode-detection-using-the-shape-detection-api") Barcode Detection Using the Shape Detection API
+    +slide({header: "", classes: ""})
+      +cover('pictures/barcodes.jpg')
+    +slide({header: "Barcode Detection API", classes: ""})
+      pre
+        code
+          | const barcodeDetector = new BarcodeDetector();
+      pre.next 
+        code
+          | barcodeDetector.detect(image)
+          |   .then(barcodes => { ... })
+          |   .catch(e => { ... });
+    +slide({header: "", classes: ""})
+      +cover('pictures/barcode_use.jpg')
+      a.copyright(href="https://caniuse.com/mdn-api_barcodedetector") Caniuse — BarcodeDetector API
+    +slide({header: "", classes: ""})
+      h2.shout(style="font-size: 100px; margin-top: -50px") Хочу смотреть видео и&nbsp;одновременно смотреть другие вкладки
+      +cover('pictures/what-if.jpg')
+    +slide({header: "", classes: ""})
+      iframe(height='450' style='width: 520px; margin-left: 160px' scrolling='no' title='Picture-in-Picture demo' src='https://codepen.io/ayoisaiah/embed/dyyeQVG?default-tab=result&theme-id=light' frameborder='no' loading='lazy' allowtransparency='true' allowfullscreen='true')
+        | See the Pen 
+        a(href='https://codepen.io/ayoisaiah/pen/dyyeQVG')
+          | Picture-in-Picture demo
+        |  by Ayooluwa (
+        a(href='https://codepen.io/ayoisaiah') @ayoisaiah
+        | )
+        |   on 
+        a(href='https://codepen.io') CodePen
+        | .
+    +slide({header: "Picture-in-Picture API", classes: ""})
+      pre
+        code video(src="") 
+        code.mark   .requestPictureInPicture()
+        code   .catch(error => {
+        code.comment     // Error handling
+        code   });
+      pre
+       code .exitPictureInPicture()
+     +slide({header: "", classes: ""})
+      +cover('pictures/picture-in_use.jpg')
+      a.copyright(href="https://caniuse.com/picture-in-picture") Caniuse — Picture-in-Picture API
     +slide({header: "Графика и медиа", classes: ""})
       ul
         li
@@ -153,6 +278,34 @@ html(lang='ru')
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API") Media Session API
           |  и 
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API") Encrypted Media Extensions API
+    
+    +slide({header: "", classes: "", shout: true})
+      h2.shout(style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;") Управление устройствами
+      +cover('pictures/blur_cover.jpg')
+    +slide({header: "", classes: ""})
+      +cover('pictures/makeev_iot.png')
+      a.copyright(href="https://youtu.be/9mv-8gSyalU") Я и ИоТ, Вадим Макеев (Youtube)
+    +slide({header: "", classes: ""})
+      +cover('pictures/midi.png')
+      a.copyright(href="https://youtu.be/-Ml7J3ocqUo") George Mandis — Make More Than Music with Tiny Computers, JavaScript and MIDI (Youtube)
+    +slide({header: "", classes: ""})
+      h2.shout(style="font-size: 100px; margin-top: -50px") Как заставить телефон делать &#171;вж-вж-вж-вж&#187;?
+      +cover('pictures/what-if.jpg')
+    +slide({header: "", classes: "shout"})
+      h2.shout
+        a(href="https://neesoglasnaja.github.io/DiceRoller/dist/pwa/index.html") Бросим кубики
+    +slide({header: "Vibration API", classes: ""})
+      pre
+        code
+          | if ("vibrate" in navigator) {
+          |   ...
+          |   navigator.vibrate(200) // одиночная вибрация
+          |   navigator.vibrate([100,30,100,30,...]) // последовательность
+          |   ...
+          | }
+    +slide({header: "", classes: ""})
+      +cover('pictures/vibration_use.jpg')
+      a.copyright(href="https://caniuse.com/vibration") Caniuse — Vibration API
     +slide({header: "Управление устройствами", classes: ""})
       ul
         li
@@ -181,6 +334,44 @@ html(lang='ru')
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API") Web MIDI API
           |  и 
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebHID_API") WebHID API
+    +slide({header: "", classes: "", shout: true})
+      h2.shout(style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;") Хранение и&nbsp;управление данными
+      +cover('pictures/blur_cover.jpg')
+    +slide({header: "", classes: ""})
+      h2.shout(style="font-size: 100px; margin-top: -50px") Как оградить сайт от &#171;опасного кода&#187 в&nbsp;комментариях?
+      +cover('pictures/what-if.jpg')
+    +slide({header: "", classes: ""})
+      h2.shout
+        a(href="https://sanitizer-api.dev/") Запретим опасный код
+    +slide({header: "", classes: ""})
+      +cover('pictures/sanitizer_use.jpg')
+      a.copyright(href="https://caniuse.com/mdn-api_sanitizer") Caniuse — Sanitizer API
+    +slide({header: "", classes: ""})
+      +cover('pictures/sanitize_npm.jpg')
+      a.copyright(href="https://www.npmjs.com/package/sanitize-html") sanitize-html    
+    +slide({header: "", classes: ""})
+      h2.shout(style="font-size: 100px; margin-top: -50px") Хочу доступ к контактам, как в мобильных приложениях
+      +cover('pictures/what-if.jpg')
+    +slide({header: "", classes: ""})
+      video(src="pictures/contact.mp4" width="230" style="margin-left: 350px" loop autoplay)
+      a.copyright(href="https://contact-picker.glitch.me/") Contact Picker API Demo 
+    +slide({header: "Contact Picker API", classes: ""})
+      span(style="font-size: 0.9em")
+        pre
+          code
+            | const supported = ('contacts' in navigator
+            |    && 'ContactsManager' in window);
+        pre.next
+          code
+            | const props = ['name', 'email', 'tel', 'address', 'icon'];
+            | const opts = { multiple: true };
+            | 
+            | navigator.contacts.select(props, opts)
+            |   .then(contacts => { ... })
+            |   .catch(e => { ... })
+    +slide({header: "", classes: ""})
+      +cover('pictures/contacts_use.jpg')
+      a.copyright(href="https://developer.mozilla.org/en-US/docs/Web/API/ContactsManager/getProperties") ContactsManager - Web APIs | MDN
     +slide({header: "Хранение и управление данными", classes: ""})
       ul
         li
@@ -210,6 +401,11 @@ html(lang='ru')
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Contact_Picker_API") Contact Picker API
         li
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API") Payment Request API
+    //- +slide({header: "Cостояние браузера и&nbsp;отладка", classes: "", shout: true})
+    //- +slide({header: "Presentation API", classes: ""})
+    //- +slide({header: "", classes: ""})
+    //-   +cover('pictures/presentation_use.jpg')
+    //-   a.copyright(href="https://caniuse.com/mdn-api_presentation") Caniuse — Presentation API
     +slide({header: "Cостояние браузера и отладка", classes: ""})
       ul
         li
@@ -245,14 +441,8 @@ html(lang='ru')
         li
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Presentation_API") Presentation API
     +slide({header: "", classes: ""})
-      ul
-        li 
-        li
-        li
-    +slide({header: "О чем я не сказала?", classes: ""})
-      ul
-        li Гуддини
-        li WebAssembly
+      +cover('pictures/webassembly.jpg')
+
     +slide({name: 'theend', header: "", classes: ''})
       p.end-link(style="position: absolute; bottom: 5%")
         a.bigger(href="http://bit.ly/WeAreDevs-frameworks" target="_blank") bit.ly/WeAreDevs-frameworks
@@ -264,3 +454,6 @@ html(lang='ru')
 
     .progress
     script(src='shower/shower.min.js')
+
+    script(src='highlight/highlight.pack.js')
+    script(type='text/javascript') hljs.initHighlightingOnLoad();
