@@ -62,9 +62,9 @@ html(lang='ru')
     +slide({header: "", classes: ""})
       h2.shout(style="font-size: 100px") Как узнать, что пользователь &#171;зумил&#187 страницу?
       +cover('pictures/what-if.jpg')
-    +slide({header: "Определяем пользовательский зум", classes: ""})
+    +slide({header: "", classes: ""})
       div(style="display:flex")
-        iframe(height='400' width="400" style='' scrolling='no' title='Simple browser zoom detect with jquery #codevember' src='https://codepen.io/reinis/embed/RooGOE?default-tab=result&theme-id=light' frameborder='no' loading='lazy' allowtransparency='true' allowfullscreen='true')
+        iframe(height='500' width="400" style='' scrolling='no' title='Simple browser zoom detect with jquery #codevember' src='https://codepen.io/reinis/embed/RooGOE?default-tab=result&theme-id=light' frameborder='no' loading='lazy' allowtransparency='true' allowfullscreen='true')
           | See the Pen 
           a(href='https://codepen.io/reinis/pen/RooGOE')
             | Simple browser zoom detect with jquery #codevember
@@ -74,58 +74,101 @@ html(lang='ru')
           |   on 
           a(href='https://codepen.io') CodePen
           | .
-        video(src="pictures/zoom_bad.mp4" controls width="20%" style="margin-left: 30px")
-      img.next(src="pictures/xz.jpg" style="position:absolute; right: 0; bottom: 0; width: 300px")
+        span.next
+          video(src="pictures/zoom_bad.mp4" controls width="40%" style="margin-left: 50px")
+          img.next(src="pictures/xz.jpg" style="position:absolute; right: 0; bottom: 0; width: 300px")
       a.copyright(href="https://codepen.io/reinis/pen/RooGOE") Simple browser zoom detect with jquery #codevember
     +slide({header: "", classes: ""})
       iframe(height='700' style='width: 150%; transform: scale(0.65); transform-origin: 0 0' scrolling='no' src="https://bokand.github.io/viewport/index.html") 
       a.copyright(href="https://bokand.github.io/viewport/index.html") Visual vs. Layout Viewport Demo
     +slide({header: "VisualViewport API", classes: ""})
-      pre
-        code.js
-          | visualViewport = {
-          |   offsetLeft
-          |   offsetTop
-          |   pageLeft
-          |   pageTop
-          |   width  
-          |   height
-          |   scale
-          | }
+      div(style="display:flex")
+        pre(style="font-size: 0.8em; width: 50%")
+          code.js
+            | VisualViewport = {
+            |   // Read-only
+            |   offsetLeft
+            |   offsetTop
+            |   pageLeft
+            |   pageTop
+            |   width  
+            |   height
+            |   scale
+            | }
+        pre.next(style="font-size: 0.9em; width: 50%")
+          code 
+            | // Как получить значение зума*
+            | const scale = VisualViewport.scale
     +slide({header: "", classes: ""})
-      iframe(height='700' style='width: 150%; transform: scale(0.65); transform-origin: 0 0' scrolling='no' src="https://wicg.github.io/visual-viewport/examples/hide-on-zoom.html") 
+      div(style="display:flex")
+        iframe(height='500' style='width: 60%' scrolling='no' src="https://wicg.github.io/visual-viewport/examples/hide-on-zoom.html") 
+        video(src="pictures/zoom_no.mp4" loop autoplay width="25%" style="margin-left: 50px")
       a.copyright(href="https://wicg.github.io/visual-viewport/examples/hide-on-zoom.html") Example with hide on zoom
     +slide({header: "", classes: ""})
       +cover('pictures/viewport_use.jpg')
       a.copyright(href="https://caniuse.com/mdn-api_visualviewport") Caniuse — VisualViewport API
     +slide({header: "Манипуляции DOM и стилями", classes: ""})
-      ul
-        li
+      div.double
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model") DOM
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model") CSSOM
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events") Pointer events
-          | , 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API") Pointer Lock API
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Touch_events") Touch events
-        li
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Counter_Styles") CSS Counter Styles
-        li
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API") CSS Font Loading API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API") HTML Drag and Drop API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API") Intersection Observer API
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API") Visual Viewport API
-        li
-          | CSS Houdini: 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API ") CSS Typed OM
-          |  и 
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API") CSS Painting API
-          | и CSS Layout API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API ") CSS Typed OM
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model") CSSOM
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API") HTML Drag and Drop API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API") Intersection Observer API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API") Page Visibility API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events") Pointer events
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API") Pointer Lock API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API") Resize Observer API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Touch_events") Touch events
+        div
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API") Visual Viewport API
+    +slide({header: "Манипуляции DOM и стилями", classes: ""})
+      div.double
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model") DOM
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Counter_Styles") CSS Counter Styles
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Font_Loading_API") CSS Font Loading API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Painting_API") CSS Painting API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Typed_OM_API ") CSS Typed OM
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model") CSSOM
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API") HTML Drag and Drop API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API") Intersection Observer API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API") Page Visibility API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events") Pointer events
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API") Pointer Lock API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API") Resize Observer API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Touch_events") Touch events
+        div(style="opacity: 0.3")
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API") Visual Viewport API
     +slide({header: "", classes: "", shout: true})
       h2.shout(style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;") Передача данных и состояние сети
       +cover('pictures/blur_cover.jpg')
@@ -156,37 +199,71 @@ html(lang='ru')
       +cover('pictures/broadcast_use.jpg')
       a.copyright(href="https://caniuse.com/broadcastchannel") Caniuse — BroadcastChannel
     +slide({header: "Передача данных и состояние сети", classes: ""})
-      ul
-        li 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/URL_API") URL API
-          | , 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest") XMLHttpRequest
-          | , 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API") Fetch API
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API") WebSockets
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API") Service Worker API
-          | :
-          ul
-            li(style="font-size: 0.85em")
-              a(href="https://developer.mozilla.org/en-US/docs/Web/API/Content_Index_API") Content Index API
-              | , 
-              a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API") Web Periodic Background Synchronization API
-              |  и 
-              a(href="https://developer.mozilla.org/en-US/docs/Web/API/Background_Fetch_API") Background Fetch API
-        li 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events") Server-sent events
-          |  и 
+      div.double
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Background_Fetch_API") Background Fetch API
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API") Beacon API
-        li 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API") Broadcast Channel API
-          |  и 
+        div
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API") Broadcast Channel API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Content_Index_API") Content Index API
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API") Channel Messaging API
-        li 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Streams_API") Streams API
-        li 
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API") Fetch API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/History_API") History API
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API") Network Information API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API") Service Worker API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events") Server-sent events
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Streams_API") Streams API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API") Web Periodic Background Synchronization API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/URL_API") URL API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API") WebSockets
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest") XMLHttpRequest
+    +slide({header: "Передача данных и состояние сети", classes: ""})
+      div.double
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Background_Fetch_API") Background Fetch API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API") Beacon API
+        div(style="opacity: 0.3")
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API") Broadcast Channel API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Content_Index_API") Content Index API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API") Channel Messaging API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API") Fetch API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/History_API") History API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API") Network Information API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API") Service Worker API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events") Server-sent events
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Streams_API") Streams API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Periodic_Background_Synchronization_API") Web Periodic Background Synchronization API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/URL_API") URL API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API") WebSockets
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest") XMLHttpRequest
     +slide({header: "", classes: "", shout: true})
       h2.shout(style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;") Графика и медиа
       +cover('pictures/blur_cover.jpg')
@@ -227,58 +304,114 @@ html(lang='ru')
         | .
     +slide({header: "Picture-in-Picture API", classes: ""})
       pre
-        code video(src="") 
-        code.mark   .requestPictureInPicture()
-        code   .catch(error => {
-        code.comment     // Error handling
-        code   });
-      pre
-       code .exitPictureInPicture()
+        code.js
+          | // Открыть окно с видео
+          | video(src="").requestPictureInPicture()
+          |           // .catch(e => { ... });
+      pre.js.next
+        code
+          | // Закрыть окно с видео
+          | video(src="").exitPictureInPicture()
+          |            //.catch(e => { ... });
      +slide({header: "", classes: ""})
       +cover('pictures/picture-in_use.jpg')
       a.copyright(href="https://caniuse.com/picture-in-picture") Caniuse — Picture-in-Picture API
     +slide({header: "Графика и медиа", classes: ""})
-      ul
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API") Web Animations API
-          | , 
+      div.double(style="folt-size: 0.7em; line-height: 1.5")
+        div
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API") Barcode Detection API
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API") Canvas API
-          | , 
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API") Encrypted Media Extensions API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API") Fullscreen API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Capabilities_API") Media Capabilities API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API") Media Session API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API") Media Source API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API") Media Stream
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API") MediaStream Recording API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API") MediaStream Image Capture API
+        div
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API") Picture-in-Picture API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Presentation_API") Presentation API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API") Screen Capture API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API") Screen Wake Lock API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API") Web Animations API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API") Web Audio API
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API") WebGL
-          |  и 
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API") WebRTC API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API") Web Speech API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API") Web Video Text Tracks Format
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API" style="text-decoration:line-through ") WebVR API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API") WebXR Device API
+    +slide({header: "Графика и медиа", classes: ""})
+      div.double(style="folt-size: 0.7em; line-height: 1.5")
+        div(style="opacity: 0.3")
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API") Barcode Detection API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API") Canvas API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API") Encrypted Media Extensions API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API") Fullscreen API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Capabilities_API") Media Capabilities API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API") Media Session API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API") Media Source API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API") Media Stream
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API") MediaStream Recording API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API") MediaStream Image Capture API
+        div(style="opacity: 0.3")
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API") Picture-in-Picture API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Presentation_API") Presentation API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API") Screen Capture API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API") Screen Wake Lock API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API") Web Animations API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API") Web Audio API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API") WebGL
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API") WebRTC API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API") Web Speech API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API") Web Video Text Tracks Format
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API" style="text-decoration:line-through ") WebVR API
           |  
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API") WebXR Device API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API") MediaStream Image Capture API
-          | , 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API") Screen Capture API
-          | , 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API") Barcode Detection API
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Picture-in-Picture_API") Picture-in-Picture API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API") Web Audio API
-          | , 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API") Web Speech API
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API") Web Video Text Tracks Format (WebVTT)
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API") WebRTC API
-          | : 
-          span(style="font-size: 0.85em")
-            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API") Media Stream
-            |  и  
-            a(href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API") MediaStream Recording API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Capabilities_API") Media Capabilities API
-          | , 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API") Media Source API
-          | , 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API") Media Session API
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API") Encrypted Media Extensions API
-    
     +slide({header: "", classes: "", shout: true})
       h2.shout(style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;") Управление устройствами
       +cover('pictures/blur_cover.jpg')
@@ -307,33 +440,63 @@ html(lang='ru')
       +cover('pictures/vibration_use.jpg')
       a.copyright(href="https://caniuse.com/vibration") Caniuse — Vibration API
     +slide({header: "Управление устройствами", classes: ""})
-      ul
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API") Geolocation API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API") Permissions API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API") Notifications API
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API") Push API
-        li
+      div.double
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API") Clipboard API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API") Web Bluetooth API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API"  style="text-decoration:line-through") Battery Status API
-          | , 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Proximity_Events"  style="text-decoration:line-through") Proximity Events
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs") Sensor APIs
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API") Vibration API
-        li
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API") Gamepad API
-          | , 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API") Web MIDI API
-          |  и 
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API") Geolocation API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API") Notifications API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API") Permissions API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API") Push API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API"  style="text-decoration:line-through") Battery Status API
+          |  
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Proximity_Events"  style="text-decoration:line-through") Proximity Events
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs") Sensor APIs
+        div
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API") Vibration API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API") Web Bluetooth API
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebHID_API") WebHID API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API") Web MIDI API
+    +slide({header: "Управление устройствами", classes: ""})
+      div.double
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API") Clipboard API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API") Gamepad API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API") Geolocation API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API") Notifications API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API") Permissions API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API") Push API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API"  style="text-decoration:line-through") Battery Status API
+          |  
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Proximity_Events"  style="text-decoration:line-through") Proximity Events
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Sensor_APIs") Sensor APIs
+        div(style="opacity: 0.3")
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Vibration_API") Vibration API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API") Web Bluetooth API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/WebHID_API") WebHID API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API") Web MIDI API
     +slide({header: "", classes: "", shout: true})
       h2.shout(style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;") Хранение и&nbsp;управление данными
       +cover('pictures/blur_cover.jpg')
@@ -372,80 +535,115 @@ html(lang='ru')
     +slide({header: "", classes: ""})
       +cover('pictures/contacts_use.jpg')
       a.copyright(href="https://developer.mozilla.org/en-US/docs/Web/API/ContactsManager/getProperties") ContactsManager - Web APIs | MDN
+    
     +slide({header: "Хранение и управление данными", classes: ""})
-      ul
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Storage_API") Storage API
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Storage_Access_API") Storage Access API
-          ul 
-            li
-              a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API") Web Storage API
-              |  и 
-              a(href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API") IndexedDB API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API") File and Directory Entries API
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API") File System Access API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API") HTML Sanitizer API
-          | , 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Encoding_API") Encoding API
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API") Web Crypto API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API") Web Authentication API
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Credential_Management_API ") Credential Management API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Contact_Picker_API") Contact Picker API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API") Payment Request API
-    //- +slide({header: "Cостояние браузера и&nbsp;отладка", classes: "", shout: true})
-    //- +slide({header: "Presentation API", classes: ""})
-    //- +slide({header: "", classes: ""})
-    //-   +cover('pictures/presentation_use.jpg')
-    //-   a.copyright(href="https://caniuse.com/mdn-api_presentation") Caniuse — Presentation API
-    +slide({header: "Cостояние браузера и отладка", classes: ""})
-      ul
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Console_API") Console API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/History_API") History API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API") Web Workers API
-          | , 
+      div.double(style="font-size: 0.6; line-height: 1.5")
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Background_Tasks_API") Background Tasks API
-          |  и 
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Console_API") Console API
+        div
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Contact_Picker_API") Contact Picker API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Credential_Management_API ") Credential Management API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Encoding_API") Encoding API
+        div
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API") HTML Sanitizer API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API") File and Directory Entries API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API") File System Access API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Frame_Timing_API") Frame Timing API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API") IndexedDB API
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API") Long Tasks API
-        li
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API") Navigation Timing API
+        div
           a(href="https://developer.mozilla.org/en-US/docs/Web/API/Performance_API") Performance API
-          | : 
-          ul
-            li(style="font-size: 0.85em")
-              a(href="https://developer.mozilla.org/en-US/docs/Web/API/Performance_Timeline") Performance Timeline
-              | , 
-              a(href="https://developer.mozilla.org/en-US/docs/Web/API/Frame_Timing_API") Frame Timing API
-              | , 
-              a(href="https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API") Navigation Timing API
-              |  и 
-              a(href="https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API") Resource Timing API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API") Page Visibility API
-          | , 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API") Resize Observer API
-          |  и 
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API") Fullscreen API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Screen_Wake_Lock_API") Screen Wake Lock API
-        li
-          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Presentation_API") Presentation API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Performance_Timeline") Performance Timeline
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API") Resource Timing API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API") Payment Request API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Storage_Access_API") Storage Access API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Storage_API") Storage API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API") Web Authentication API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API") Web Crypto API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API") Web Storage API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API") Web Workers API
+    +slide({header: "Хранение и управление данными", classes: ""})
+      div.double(style="font-size: 0.6; line-height: 1.5")
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Background_Tasks_API") Background Tasks API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Console_API") Console API
+        div(style="opacity: 0.3")
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/Contact_Picker_API") Contact Picker API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Credential_Management_API ") Credential Management API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Encoding_API") Encoding API
+        div(style="opacity: 0.3")
+          mark
+            a(href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Sanitizer_API") HTML Sanitizer API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API") File and Directory Entries API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API") File System Access API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Frame_Timing_API") Frame Timing API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API") IndexedDB API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Long_Tasks_API") Long Tasks API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API") Navigation Timing API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Performance_API") Performance API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Performance_Timeline") Performance Timeline
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Resource_Timing_API") Resource Timing API
+        div
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Payment_Request_API") Payment Request API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Storage_Access_API") Storage Access API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Storage_API") Storage API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API") Web Authentication API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API") Web Crypto API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API") Web Storage API
+        div(style="opacity: 0.3")
+          a(href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API") Web Workers API
+    +slide({header: "Вместо выводов", classes: ""})
+      figure
+        blockquote
+          p(style="margin-bottom: 0.5em") — Нельзя поверить в невозможное!
+          p(style="margin-bottom: 0.5em") — Просто у тебя мало опыта, – заметила Королева. – В твоем возрасте я уделяла этому полчаса каждый день! В иные дни я успевала поверить в десяток невозможностей до завтрака!
+        figcaption Льюис Кэрролл,  «Алиса в стране чудес» 
     +slide({header: "", classes: ""})
       +cover('pictures/webassembly.jpg')
 
     +slide({name: 'theend', header: "", classes: ''})
       p.end-link(style="position: absolute; bottom: 5%")
-        a.bigger(href="http://bit.ly/WeAreDevs-frameworks" target="_blank") bit.ly/WeAreDevs-frameworks
+        a.bigger(href="http://bit.ly/GDG_Minsk_API" target="_blank") bit.ly/GDG_Minsk_API
         br
         | Саша Шинкевич (
         a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja

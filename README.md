@@ -1,8 +1,6 @@
-# How to stop choosing JavaScript frameworks and start living
+# Необычные браузерные API
 
-Imagine, you have a task to hang a picture on the wall. What would you do first? You can start by picking up your favorite tool. Let's say, a hammer. If you're a Senior HammerJS Developer, you could probably use a hammer for screws as well as for nails. Or you could spend some time researching if you need that picture on that particular wall in the beginning.
-
-The same goes for the frontend development. JavaScript framework is just a tool that helps us to build applications. And like any other tool, it has its purpose and the list of tasks it's good for. So why is it so hard to choose the right one for a new project? In the talk, Sasha is going to share her experience on how to choose the best tools for your projects and what important things you have to decide before you start looking at your options.
+В 2021 году никого не удивить переходами по приложению без перезагрузки страниц, определением местоположения пользователя, проигрыванием аудио и видео, двухсторонней синхронизацией с помощью веб-сокетов и уж тем более отладкой с помощью console.log. К этим браузерным возможностям, которые коротко объединены под названием Web APIs, мы как разработчики привыкли и используем каждый день. И в ежедневной рутине разработки мы часто забываем, что фронтенд — это не только двигание пикселей по экрану, создание очередной формы или преобразование данных из одного JSON в другой с помощью пользователя, но и целый набор интересных API, которые можно умело применить, если о них знаешь. Давайте разбираться, что же может современный браузер, и как это может помочь «обычным» проектам
 
 ## How to launch slides
 ### 1. View the presentation
