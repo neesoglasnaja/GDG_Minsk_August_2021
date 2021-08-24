@@ -49,13 +49,6 @@ html(lang='ru')
       a.copyright(href="https://developer.mozilla.org/en-US/docs/Web/API#specifications") Web APIs | MDN
       +cover('pictures/apis.jpg')
       img.next(src="pictures/confused.gif", style="position: absolute; left: 30%; bottom: -10%; width: 500px")
-    //- +slide({header: "О чем эти спецификации", classes: ""})
-    //-   ul
-    //-     li Манипуляции DOM и стилями
-    //-     li.next Передача данных и состояние сети
-    //-     li.next Графика и медиа
-    //-     li.next Управление устройствами
-    //-     li.next Хранение и управление данными пользователя
     +slide({header: "", classes: ""})
       h2.shout(style="color: #fff; text-shadow: 0 0 20px #333, 0 0 40px #333, 0 0 60px #333;") Манипуляции DOM и стилями
       +cover('pictures/blur_cover.jpg')
@@ -75,8 +68,8 @@ html(lang='ru')
           a(href='https://codepen.io') CodePen
           | .
         span.next
-          video(src="pictures/zoom_bad.mp4" controls width="40%" style="margin-left: 50px")
-          img.next(src="pictures/xz.jpg" style="position:absolute; right: 0; bottom: 0; width: 300px")
+          video(src="pictures/zoom_bad.mp4" autoplay loop width="40%" style="margin-left: 50px")
+          img(src="pictures/xz.jpg" style="position:absolute; right: 0; bottom: 0; width: 300px")
       a.copyright(href="https://codepen.io/reinis/pen/RooGOE") Simple browser zoom detect with jquery #codevember
     +slide({header: "", classes: ""})
       iframe(height='700' style='width: 150%; transform: scale(0.65); transform-origin: 0 0' scrolling='no' src="https://bokand.github.io/viewport/index.html") 
@@ -175,13 +168,13 @@ html(lang='ru')
     +slide({header: "", classes: ""})
       h2.shout(style="font-size: 100px") Как общаться между вкладками, не&nbsp;используя сеть?
       +cover('pictures/what-if.jpg')
+    +slide({header: "Broadcast Channel API", classes: ""})
+      img(src="pictures/broadcastchannel.png", style="width: 80%; margin-left: 100px")
     +slide({header: "", classes: ""})
       div(style="display:flex; margin-left: 30px")
         iframe(height='450' style='width: 400px' scrolling='no' src="https://web-api-examples.github.io/broadcastchannel.html") 
         iframe(height='450' style='width: 400px; margin-left: 30px' scrolling='no' src="https://web-api-examples.github.io/broadcastchannel.html")
       a.copyright(href="https://web-api-examples.github.io/broadcastchannel.html") Demo - BroadcastChannel
-    +slide({header: "Broadcast Channel API", classes: ""})
-      img(src="pictures/broadcastchannel.png", style="width: 80%; margin-left: 100px")
     +slide({header: "Broadcast Channel API", classes: ""})
       pre
         code.js
@@ -275,7 +268,7 @@ html(lang='ru')
         a(href="https://qrsnapper.appspot.com/") Считываем код телефоном
       a.copyright(href="https://dzone.com/articles/barcode-detection-using-the-shape-detection-api") Barcode Detection Using the Shape Detection API
     +slide({header: "", classes: ""})
-      +cover('pictures/barcodes.jpg')
+      video(src="pictures/qrcode.mp4" autoplay loop width="230px" style="margin-left: 300px")
     +slide({header: "Barcode Detection API", classes: ""})
       pre
         code
@@ -427,6 +420,8 @@ html(lang='ru')
     +slide({header: "", classes: "shout"})
       h2.shout
         a(href="https://neesoglasnaja.github.io/DiceRoller/dist/pwa/index.html") Бросим кубики
+    +slide({header: "", classes: "shout"})
+      +cover('pictures/dices.jpg')
     +slide({header: "Vibration API", classes: ""})
       pre
         code
@@ -504,14 +499,14 @@ html(lang='ru')
       h2.shout(style="font-size: 100px; margin-top: -50px") Как оградить сайт от &#171;опасного кода&#187 в&nbsp;комментариях?
       +cover('pictures/what-if.jpg')
     +slide({header: "", classes: ""})
+      +cover('pictures/sanitize_npm.jpg')
+      a.copyright(href="https://www.npmjs.com/package/sanitize-html") sanitize-html 
+    +slide({header: "", classes: ""})
       h2.shout
         a(href="https://sanitizer-api.dev/") Запретим опасный код
     +slide({header: "", classes: ""})
       +cover('pictures/sanitizer_use.jpg')
       a.copyright(href="https://caniuse.com/mdn-api_sanitizer") Caniuse — Sanitizer API
-    +slide({header: "", classes: ""})
-      +cover('pictures/sanitize_npm.jpg')
-      a.copyright(href="https://www.npmjs.com/package/sanitize-html") sanitize-html    
     +slide({header: "", classes: ""})
       h2.shout(style="font-size: 100px; margin-top: -50px") Хочу доступ к контактам, как в мобильных приложениях
       +cover('pictures/what-if.jpg')
@@ -640,7 +635,7 @@ html(lang='ru')
         figcaption Льюис Кэрролл,  «Алиса в стране чудес» 
     +slide({header: "", classes: ""})
       +cover('pictures/webassembly.jpg')
-
+      a.copyright(href="https://webassembly.org/") WebAssembly
     +slide({name: 'theend', header: "", classes: ''})
       p.end-link(style="position: absolute; bottom: 5%")
         a.bigger(href="http://bit.ly/GDG_Minsk_API" target="_blank") bit.ly/GDG_Minsk_API
